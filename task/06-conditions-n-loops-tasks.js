@@ -30,7 +30,14 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    let result = '';
+    if(num% 3 === 0)
+        result += 'Fizz';
+    if(num% 5 === 0)
+        result += 'Buzz';
+    if(result.length === 0)
+         return num;
+    return result;
 }
 
 
@@ -46,7 +53,9 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    if(n === 0)
+        return 1;
+    return n*getFactorial(n-1);
 }
 
 
@@ -63,7 +72,10 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let result = 0;
+    for(let i = n1; i <= n2; i++)
+        result += i;
+    return result;
 }
 
 
@@ -82,7 +94,7 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    return (a < b+c) && (b < a+c) && (c < a+b);
 }
 
 
@@ -119,7 +131,10 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
-    throw new Error('Not implemented');
+    return !(rect2.left > rect1.left + rect1.width ||
+             rect2.left + rect2.width < rect1.left ||
+             rect2.top > rect1.top + rect1.height ||
+             rect2.top + rect2.height < rect1.top);
 }
 
 
@@ -150,7 +165,7 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+    return (Math.sqrt(Math.pow((point.x-circle.center.x),2) + Math.pow((point.y-circle.center.y),2)) < circle.radius);
 }
 
 
@@ -166,7 +181,10 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+    for (let i = 0; i < str.length; i++)
+        if(str.lastIndexOf(str.charAt(i)) === str.indexOf(str.charAt(i)))
+            return str.charAt(i);
+  return null;
 }
 
 
@@ -192,7 +210,16 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    let result = ''
+    if(a > b)
+    {
+        let temp = a
+        a = b
+        b = temp
+    }
+    return  result += (isStartIncluded ? '[' : '(') 
+                    + a.toString() + ', ' + b.toString()
+                    + (isEndIncluded ? ']' : ')');
 }
 
 
@@ -209,7 +236,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    return str.split('').reverse().join('');
 }
 
 
@@ -226,7 +253,7 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    return reverseString(num.toString());
 }
 
 
