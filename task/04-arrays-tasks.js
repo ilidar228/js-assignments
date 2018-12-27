@@ -465,7 +465,7 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-   return new Array(n).fill(new Array(n).fill(0)).map(function (mapValue, mapIndex,) {
+   return new Array(n).fill(new Array(n).fill(0)).map(function (mapValue, mapIndex) {
       return mapValue.map(function(subMapValue, subMapIndex,) {
           return mapIndex === subMapIndex;
       });
